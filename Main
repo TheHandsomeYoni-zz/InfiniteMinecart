@@ -1,0 +1,12 @@
+    @Override
+    public void onEnable() {
+        getServer().getPluginManager().registerEvents(new Minecart(this), this);
+        
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
+    }
+
+    @Override
+    public void onDisable() {
+        // Plugin shutdown logic
+    }
