@@ -1,0 +1,13 @@
+    @EventHandler
+    public void onMinecart(VehicleMoveEvent e){
+        if(plugin.getConfig().getBoolean("enabled")){
+            Location railLoc = e.getVehicle().getLocation().add(1, 0, 0);
+            Location stoneloc = e.getVehicle().getLocation().add(0, -1, 0);
+            Vector lookLoc = e.getVehicle().getLocation().getDirection( );
+            if(e.getVehicle().getType() == EntityType.MINECART){
+                e.getVehicle().setVelocity(e.getVehicle().getLocation().getDirection().multiply(1000));
+                e.getVehicle().getLocation(stoneloc).getBlock().setType(Material.STONE);
+                e.getVehicle().getLocation(railLoc).getBlock().setType(Material.RAIL);
+                }
+            }
+        }
